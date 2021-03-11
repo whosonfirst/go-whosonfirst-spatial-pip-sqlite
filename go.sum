@@ -188,12 +188,16 @@ github.com/whosonfirst/go-whosonfirst-sources v0.1.0/go.mod h1:EUMHyGzUmqPPxlMmO
 github.com/whosonfirst/go-whosonfirst-spatial v0.0.35/go.mod h1:NRcGr8yof6lyVTRTQh3n63lfcmWVvSYP8fW9JVbAIR4=
 github.com/whosonfirst/go-whosonfirst-spatial v0.0.37 h1:dbcJDHCoTQb1bRPFpMGjFvAcuDjND0Tipvm2FxdfyNg=
 github.com/whosonfirst/go-whosonfirst-spatial v0.0.37/go.mod h1:SjDK+8GRySI5W0XBfWNyoFGo6M1yErGIPjPJLIHK7M4=
+github.com/whosonfirst/go-whosonfirst-spatial v0.0.38 h1:Ty/JQuA7JrkBUalWw9WcZ8rV6DSOeDH8nIJIwWmAoZw=
+github.com/whosonfirst/go-whosonfirst-spatial v0.0.38/go.mod h1:SjDK+8GRySI5W0XBfWNyoFGo6M1yErGIPjPJLIHK7M4=
 github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.0-20210310220421-12f8c662595c h1:n20QkrKw+iCeZLY70cOgeht4U8UeITqe166BrSlchVM=
 github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.0-20210310220421-12f8c662595c/go.mod h1:TqPkaBPFA3Vd+X3StKJRsnNPPajOxxWVRKj3WxEBpHQ=
 github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.0-20210310222442-f9f7e7a37861 h1:E25/Ack1JmHmbF9mydp4BrMMOkpFMuIjjk0dIPgBo/8=
 github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.0-20210310222442-f9f7e7a37861/go.mod h1:TqPkaBPFA3Vd+X3StKJRsnNPPajOxxWVRKj3WxEBpHQ=
 github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.0-20210311003842-3ba03f0c16f6 h1:VKgDGnPTIxyEKPesLeb3MWyVQ+pgtl7xcJD3knSTWus=
 github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.0-20210311003842-3ba03f0c16f6/go.mod h1:y3bnhi1MFjPWXUxJsT0ihoU4Oq6f2hC+zaFd+2tZHg0=
+github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.0-20210311011408-c2061bc1e03a h1:uw6ob1uCkPsbC8g4T0tfPvJQW6fu0LadntK4rkY3SDY=
+github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.0-20210311011408-c2061bc1e03a/go.mod h1:I7XYBdcCOhfiuK+sYA2bYkAM8uY7GlNddtZu3eQYlAo=
 github.com/whosonfirst/go-whosonfirst-spatial-sqlite v0.0.32 h1:dpGgsp9876SzhpMSTdYF2iu1HRoHUIciNWvT/gotBjM=
 github.com/whosonfirst/go-whosonfirst-spatial-sqlite v0.0.32/go.mod h1:bgQv3eCaayUZ9Eil0Exq54QwKllIIJ4zFVsXo4kBaIc=
 github.com/whosonfirst/go-whosonfirst-spatial-sqlite v0.0.33 h1:8QqxnCDYcttbYmfw/WiP2g9Jcl1QyNG5wZCgGFf5r4A=
