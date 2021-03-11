@@ -1,7 +1,5 @@
 FROM golang:1.16-alpine
 
-ARG DATABASE
-
 RUN mkdir /build
 
 COPY . /build/go-whosonfirst-spatial-pip-sqlite
@@ -13,10 +11,7 @@ RUN apk update && apk upgrade \
     && cd && rm -rf /build
 
 RUN mkdir /usr/local/data
-COPY $DATABASE /usr/local/data/query.db
-
-# (Optional) Add Lambda Runtime Interface Emulator and use a script in the ENTRYPOINT for simpler local runs
-# # https://docs.aws.amazon.com/lambda/latest/dg/go-image.html#go-image-clients
+COPY query.db /usr/local/data/query.db
 
 ADD https://github.com/aws/aws-lambda-runtime-interface-emulator/releases/latest/download/aws-lambda-rie /usr/bin/aws-lambda-rie
 RUN chmod 755 /usr/bin/aws-lambda-rie
