@@ -9,12 +9,10 @@ import (
 	"github.com/aws/aws-lambda-go/lambda"
 	"github.com/sfomuseum/go-flags/flagset"
 	"github.com/sfomuseum/go-flags/lookup"
-	"github.com/whosonfirst/go-whosonfirst-spatial/api"
-	"github.com/whosonfirst/go-whosonfirst-spatial/database"
+	"github.com/whosonfirst/go-whosonfirst-spatial-pip"
+	"github.com/whosonfirst/go-whosonfirst-spatial-pip/api"
+	"github.com/whosonfirst/go-whosonfirst-spatial/app"
 	"github.com/whosonfirst/go-whosonfirst-spatial/flags"
-	"github.com/whosonfirst/go-whosonfirst-spatial/geo"
-	"github.com/whosonfirst/go-whosonfirst-spatial/properties"
-	"github.com/whosonfirst/go-whosonfirst-spr/v2"
 	"log"
 	gohttp "net/http"
 )
@@ -24,11 +22,11 @@ type QueryApplication struct {
 
 func NewQueryApplication(ctx context.Context) (*QueryApplication, error) {
 
-	app := &QueryApplication{}
-	return app, nil
+	query_app := &QueryApplication{}
+	return query_app, nil
 }
 
-func (app *QueryApplication) RunWithFlagSet(ctx context.Context, fs *flag.FlagSet) error {
+func (query_app *QueryApplication) RunWithFlagSet(ctx context.Context, fs *flag.FlagSet) error {
 
 	flagset.Parse(fs)
 
@@ -50,8 +48,11 @@ func (app *QueryApplication) RunWithFlagSet(ctx context.Context, fs *flag.FlagSe
 		return err
 	}
 
-	database_uri, _ := lookup.StringVar(fs, "spatial-database-uri")
-	properties_uri, _ := lookup.StringVar(fs, "properties-reader-uri")
+	err = flags.ValidateIndexingFlags(fs)
+
+	if err != nil {
+		return err
+	}
 
 	mode, err := lookup.StringVar(fs, "mode")
 
@@ -65,67 +66,29 @@ func (app *QueryApplication) RunWithFlagSet(ctx context.Context, fs *flag.FlagSe
 		return err
 	}
 
-	db, err := database.NewSpatialDatabase(ctx, database_uri)
-
+	enable_geojson, err := lookup.BoolVar(fs, "enable-geojson")
+	
 	if err != nil {
 		return err
 	}
+	
+	spatial_app, err := app.NewSpatialApplicationWithFlagSet(ctx, fs)
 
-	query := func(ctx context.Context, req *api.PointInPolygonRequest) (interface{}, error) {
-
-		c, err := geo.NewCoordinate(req.Longitude, req.Latitude)
-
-		if err != nil {
-			return nil, fmt.Errorf("Failed to create new coordinate, %v", err)
-		}
-
-		f, err := api.NewSPRFilterFromPointInPolygonRequest(req)
-
-		if err != nil {
-			return nil, err
-		}
-
-		var rsp interface{}
-
-		r, err := db.PointInPolygon(ctx, c, f)
-
-		if err != nil {
-			return nil, fmt.Errorf("Failed to query database with coord %v, %v", c, err)
-		}
-
-		rsp = r
-
-		if len(req.Properties) > 0 {
-
-			pr, err := properties.NewPropertiesReader(ctx, properties_uri)
-
-			if err != nil {
-				return nil, fmt.Errorf("Failed to create properties reader, %v", err)
-			}
-
-			r, err := pr.PropertiesResponseResultsWithStandardPlacesResults(ctx, rsp.(spr.StandardPlacesResults), req.Properties)
-
-			if err != nil {
-				return nil, fmt.Errorf("Failed to generate properties response, %v", err)
-			}
-
-			rsp = r
-		}
-
-		return r, nil
+	if err != nil {
+		return fmt.Errorf("Failed to create new spatial application, %v", err)
 	}
 
 	switch mode {
 
 	case "cli":
 
-		req, err := api.NewPointInPolygonRequestFromFlagSet(fs)
+		req, err := pip.NewPointInPolygonRequestFromFlagSet(fs)
 
 		if err != nil {
 			return fmt.Errorf("Failed to create SPR filter, %v", err)
 		}
 
-		rsp, err := query(ctx, req)
+		rsp, err := pip.QueryPointInPolygon(ctx, spatial_app, req)
 
 		if err != nil {
 			return fmt.Errorf("Failed to query, %v", err)
@@ -141,40 +104,23 @@ func (app *QueryApplication) RunWithFlagSet(ctx context.Context, fs *flag.FlagSe
 
 	case "lambda":
 
-		lambda.Start(query)
+		handler := func(ctx context.Context, req *pip.PointInPolygonRequest) (interface{}, error) {
+			return pip.QueryPointInPolygon(ctx, spatial_app, req)
+		}
+
+		lambda.Start(handler)
 
 	case "server":
 
-		fn := func(rsp gohttp.ResponseWriter, req *gohttp.Request) {
-
-			ctx := req.Context()
-
-			var pip_req *api.PointInPolygonRequest
-
-			dec := json.NewDecoder(req.Body)
-			err := dec.Decode(&pip_req)
-
-			if err != nil {
-				gohttp.Error(rsp, err.Error(), gohttp.StatusInternalServerError)
-			}
-
-			pip_rsp, err := query(ctx, pip_req)
-
-			if err != nil {
-				gohttp.Error(rsp, err.Error(), gohttp.StatusInternalServerError)
-			}
-
-			enc := json.NewEncoder(rsp)
-			err = enc.Encode(pip_rsp)
-
-			if err != nil {
-				gohttp.Error(rsp, err.Error(), gohttp.StatusInternalServerError)
-			}
-
-			return
+		pip_opts := &api.PointInPolygonHandlerOptions{
+			EnableGeoJSON: enable_geojson,
 		}
+		
+		pip_handler, err := api.PointInPolygonHandler(spatial_app, pip_opts)
 
-		pip_handler := gohttp.HandlerFunc(fn)
+		if err != nil {
+			return fmt.Errorf("Failed to create PIP handler, %v", err)
+		}
 
 		mux := gohttp.NewServeMux()
 		mux.Handle("/", pip_handler)
