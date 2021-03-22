@@ -67,16 +67,30 @@ func (query_app *QueryApplication) RunWithFlagSet(ctx context.Context, fs *flag.
 	}
 
 	enable_geojson, err := lookup.BoolVar(fs, "enable-geojson")
-	
+
 	if err != nil {
 		return err
 	}
-	
+
 	spatial_app, err := app.NewSpatialApplicationWithFlagSet(ctx, fs)
 
 	if err != nil {
 		return fmt.Errorf("Failed to create new spatial application, %v", err)
 	}
+
+	ctx, cancel := context.WithCancel(ctx)
+	defer cancel()
+
+	uris := fs.Args()
+
+	go func() {
+
+		err := spatial_app.Iterator.IterateURIs(ctx, uris...)
+
+		if err != nil {
+			log.Printf("Failed to iterate URIs, %v", err)
+		}
+	}()
 
 	switch mode {
 
@@ -115,7 +129,7 @@ func (query_app *QueryApplication) RunWithFlagSet(ctx context.Context, fs *flag.
 		pip_opts := &api.PointInPolygonHandlerOptions{
 			EnableGeoJSON: enable_geojson,
 		}
-		
+
 		pip_handler, err := api.PointInPolygonHandler(spatial_app, pip_opts)
 
 		if err != nil {

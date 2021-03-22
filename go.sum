@@ -28,6 +28,8 @@ github.com/aaronland/go-http-rewrite v0.0.6 h1:IGmNgC+VIkOPw9h9kdhqZT48oaUbeaRgG
 github.com/aaronland/go-http-rewrite v0.0.6/go.mod h1:+Ehclg6SIiQPEJlSv3LR+8rojSSYPLGQuDf2z9bChpY=
 github.com/aaronland/go-http-sanitize v0.0.4 h1:oAYe5DbtbDS6x5Rygv5II6fDHzATGIAyY4/ZDZ63G2w=
 github.com/aaronland/go-http-sanitize v0.0.4/go.mod h1:qUi4rzUPcpMntpUFnHK00yQI5vd/Q7x9MFYwX91/ygI=
+github.com/aaronland/go-http-sanitize v0.0.5 h1:6I1WXwON6B6D0Ezjscef18O6x4DMFyaSQqbFB4dzc3Q=
+github.com/aaronland/go-http-sanitize v0.0.5/go.mod h1:qUi4rzUPcpMntpUFnHK00yQI5vd/Q7x9MFYwX91/ygI=
 github.com/aaronland/go-http-server v0.0.5 h1:DxQKt2tcoq27gjqMJ9/wKyTu0briY9lPuKwBTXXh90o=
 github.com/aaronland/go-http-server v0.0.5/go.mod h1:6dtsZDrQG0XvUOCL0eaHsUw+7gw3Xa/Nm+XofvkSw2w=
 github.com/aaronland/go-http-tangramjs v0.0.7 h1:tMPgSvlXp50wng7PcceqAzHEYkD8BKQrkKnygaLCmUs=
@@ -272,8 +274,11 @@ github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.0-20210313023325-a35e3a52
 github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.0-20210313023325-a35e3a52778d/go.mod h1:vVmtZ8w7P/hL9a7nEO4qxKq0WGyrKBw6O2VePFeP1pw=
 github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.2 h1:pceRlnz5YjbXkikKg7NkR7JPYlE2IbnMVRs2N5gUsnY=
 github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.2/go.mod h1:+WaOuGyMd+uQU+m+HSMxYrl4DFlIEqIsA7RYIGLc0nc=
+github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.4 h1:MjL/AbaQKy93lTBMRwPZiF0H6l07kXUk99hlDIpOmvU=
+github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.4/go.mod h1:C+9TII8Zsko4/CkjvcyKfotpaxAC9TpBDElv/7ielP8=
 github.com/whosonfirst/go-whosonfirst-spatial-reader v0.0.5/go.mod h1:cqDpredyf4xcRiJ/8IH9ReD1EudkJrFiBljczCElmI8=
 github.com/whosonfirst/go-whosonfirst-spatial-rtree v0.0.5/go.mod h1:D9SK5XMjf9US+Tt9bfGJxiqq5NGUolJKDRGKHG5Be1Q=
+github.com/whosonfirst/go-whosonfirst-spatial-rtree v0.0.8/go.mod h1:LqwApGWDtXR30NgoD+3cJTfz8FeFbqSTmq0NDOxFWGg=
 github.com/whosonfirst/go-whosonfirst-spatial-sqlite v0.0.32 h1:dpGgsp9876SzhpMSTdYF2iu1HRoHUIciNWvT/gotBjM=
 github.com/whosonfirst/go-whosonfirst-spatial-sqlite v0.0.32/go.mod h1:bgQv3eCaayUZ9Eil0Exq54QwKllIIJ4zFVsXo4kBaIc=
 github.com/whosonfirst/go-whosonfirst-spatial-sqlite v0.0.33 h1:8QqxnCDYcttbYmfw/WiP2g9Jcl1QyNG5wZCgGFf5r4A=
@@ -285,6 +290,8 @@ github.com/whosonfirst/go-whosonfirst-spr v0.1.0/go.mod h1:R8GtEVz1GVSnwwOjzcoVU
 github.com/whosonfirst/go-whosonfirst-spr-geojson v0.0.3/go.mod h1:C6O8efPPTDfSM1X8V/ze43xjGOLVPpYpaf6i/MnAeBo=
 github.com/whosonfirst/go-whosonfirst-spr-geojson v0.0.4 h1:o2fOHU6BgEdwur8eMEm9uWkOp3hqa78CL8Tmyi7vtpQ=
 github.com/whosonfirst/go-whosonfirst-spr-geojson v0.0.4/go.mod h1:pjFTNfpOjnzuS1+l6c6KlAKrFfYqjXUl+4uCFUxCrgM=
+github.com/whosonfirst/go-whosonfirst-spr-geojson v0.0.6 h1:2uSO/+cKwzZU0Vq98LVQ7QbFEeOa9XIazDhzCEuBX64=
+github.com/whosonfirst/go-whosonfirst-spr-geojson v0.0.6/go.mod h1:LP3NNVYogRc8b5hshT0WNnfBOPI6janlN2rToEZZ/oQ=
 github.com/whosonfirst/go-whosonfirst-spr/v2 v2.0.0 h1:UQ1n/uODS50mckZpXYe5GKm8XwoUUC1jRcNN8oiW2uc=
 github.com/whosonfirst/go-whosonfirst-spr/v2 v2.0.0/go.mod h1:tveSSFDn8XoiCeAMarSCn769lA6e3Y0/Qi8S19Jz7Gw=
 github.com/whosonfirst/go-whosonfirst-sqlite v0.1.6/go.mod h1:eH96/QgSzLBXxYG7WtmRy22eznTfgfcJhsHZVjbIZ68=
@@ -303,6 +310,8 @@ github.com/whosonfirst/go-writer v0.4.0/go.mod h1:kFzhremCFtnkJdmviwJEPLFYKQ5+vq
 github.com/whosonfirst/go-writer v0.4.1 h1:pAZ/cwaCM129PfwYy28ggCIRfL98OkrYxNnAxz2dksg=
 github.com/whosonfirst/go-writer v0.4.1/go.mod h1:kFzhremCFtnkJdmviwJEPLFYKQ5+vq6ocJPxt1bHPFY=
 github.com/whosonfirst/go-writer-featurecollection v0.0.1/go.mod h1:JyV2uXLdyooDuP57nA8qe1u6akPIP08wFnaOBzQNlok=
+github.com/whosonfirst/go-writer-featurecollection v0.0.2 h1:M6TcLVXL1eMRMScURHy1VrxA715wbwBddc6MR7gAyN0=
+github.com/whosonfirst/go-writer-featurecollection v0.0.2/go.mod h1:JyV2uXLdyooDuP57nA8qe1u6akPIP08wFnaOBzQNlok=
 github.com/whosonfirst/walk v0.0.1 h1:t0QrqGwOdPMSeovFZSXfiS0GIGHrRXK3Wb9z5Uhs2bg=
 github.com/whosonfirst/walk v0.0.1/go.mod h1:1KtP/VeooSlFOI61p+THc/C16Ra8Z5MjpjI0tsd3c1M=
 github.com/whosonfirst/warning v0.1.0/go.mod h1:cAez7FpC/UEUrbiOXZO15v2JM8eijtFHQlN93AGFy1k=
