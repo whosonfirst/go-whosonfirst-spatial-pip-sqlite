@@ -166,6 +166,8 @@ github.com/tidwall/gjson v1.6.1/go.mod h1:BaHyNc5bjzYkPqgLq7mdVzeiRtULKULXLgZFKs
 github.com/tidwall/gjson v1.6.4/go.mod h1:BaHyNc5bjzYkPqgLq7mdVzeiRtULKULXLgZFKsxEHI0=
 github.com/tidwall/gjson v1.6.8 h1:CTmXMClGYPAmln7652e69B7OLXfTi5ABcPPwjIWUv7w=
 github.com/tidwall/gjson v1.6.8/go.mod h1:zeFuBCIqD4sN/gmqBzZ4j7Jd6UcA2Fc56x7QFsv+8fI=
+github.com/tidwall/gjson v1.7.1 h1:hwkZ6V1/EF8FxNhKJrIXQwSscyl2yWCZ1SkOCQYHSHA=
+github.com/tidwall/gjson v1.7.1/go.mod h1:5/xDoumyyDNerp2U36lyolv46b3uF/9Bu6OfyQ9GImk=
 github.com/tidwall/match v1.0.1/go.mod h1:LujAq0jyVjBy028G1WhWfIzbpQfMO8bBZ6Tyb0+pL9E=
 github.com/tidwall/match v1.0.3 h1:FQUVvBImDutD8wJLN6c5eMzWtjgONK9MwIBCOrUJKeE=
 github.com/tidwall/match v1.0.3/go.mod h1:eRSPERbgtNPcGhD8UCthc6PmLEQXEWd3PRB5JTxsfmM=
@@ -173,6 +175,8 @@ github.com/tidwall/pretty v0.0.0-20190325153808-1166b9ac2b65/go.mod h1:XNkn88O1C
 github.com/tidwall/pretty v1.0.0/go.mod h1:XNkn88O1ChpSDQmQeStsy+sBenx6DDtFZJxhVysOjyk=
 github.com/tidwall/pretty v1.0.2 h1:Z7S3cePv9Jwm1KwS0513MRaoUe3S01WPbLNV40pwWZU=
 github.com/tidwall/pretty v1.0.2/go.mod h1:XNkn88O1ChpSDQmQeStsy+sBenx6DDtFZJxhVysOjyk=
+github.com/tidwall/pretty v1.1.0 h1:K3hMW5epkdAVwibsQEfR/7Zj0Qgt4DxtNumTq/VloO8=
+github.com/tidwall/pretty v1.1.0/go.mod h1:XNkn88O1ChpSDQmQeStsy+sBenx6DDtFZJxhVysOjyk=
 github.com/tidwall/sjson v1.1.2/go.mod h1:SEzaDwxiPzKzNfUEO4HbYF/m4UCSJDsGgNqsS1LvdoY=
 github.com/tidwall/sjson v1.1.5 h1:wsUceI/XDyZk3J1FUvuuYlK62zJv2HO2Pzb8A5EWdUE=
 github.com/tidwall/sjson v1.1.5/go.mod h1:VuJzsZnTowhSxWdOgsAnb886i4AjEyTkk7tNtsL7EYE=
@@ -262,6 +266,8 @@ github.com/whosonfirst/go-whosonfirst-spatial v0.0.45 h1:jyVyjV2t3Xn505EEOMbSlrk
 github.com/whosonfirst/go-whosonfirst-spatial v0.0.45/go.mod h1:9NCCg5+gl3rOiCDc1uU6ekQQr2nHG3s7lrb22EHwfvg=
 github.com/whosonfirst/go-whosonfirst-spatial v0.0.50 h1:bINDPg2RqimW2YY3vjyRjW3EFsxjMZg6wyILgNDoGW0=
 github.com/whosonfirst/go-whosonfirst-spatial v0.0.50/go.mod h1:n838yr+AOlrgpUG6qldO50ehiFzHJi/7fcFnf2aFq2o=
+github.com/whosonfirst/go-whosonfirst-spatial v0.0.51 h1:cFlBNNSBqDLgt6PHLUwzqGvdRcATyiDwMX4iErj9Hlg=
+github.com/whosonfirst/go-whosonfirst-spatial v0.0.51/go.mod h1:EapRzFWjj2w/vuPoqnQw2rlznIK0I/0t+9uIlf+Ordo=
 github.com/whosonfirst/go-whosonfirst-spatial-http v0.0.18 h1:Ds7QcC4CWl3LCkI9KHX0TM3BMBISrNyJtbbvnmk3sPA=
 github.com/whosonfirst/go-whosonfirst-spatial-http v0.0.18/go.mod h1:jhpHAu+bs4gnno1uZ85o2MjwK4+4FCuQ6fyJsfUEAvM=
 github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.0-20210310220421-12f8c662595c h1:n20QkrKw+iCeZLY70cOgeht4U8UeITqe166BrSlchVM=
@@ -280,6 +286,8 @@ github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.4 h1:MjL/AbaQKy93lTBMRwPZ
 github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.4/go.mod h1:C+9TII8Zsko4/CkjvcyKfotpaxAC9TpBDElv/7ielP8=
 github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.7 h1:fxw0WLg6nKn+OWN/65ghsinyKE3vkGfdukmrZvI5Qa4=
 github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.7/go.mod h1:MeW3STZ0g+WI8glmqafBj1Ie4rpYNXr3I7vZLYs1xOQ=
+github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.8 h1:JrCXKt89cxp5DA6KIL5Y3SXizXjKDXMgGDWi77AS2oY=
+github.com/whosonfirst/go-whosonfirst-spatial-pip v0.0.8/go.mod h1:9aRWzqF5cVO/q+5rsdE69vKG+YLnDVtqR+Dc1DWeRsY=
 github.com/whosonfirst/go-whosonfirst-spatial-reader v0.0.5/go.mod h1:cqDpredyf4xcRiJ/8IH9ReD1EudkJrFiBljczCElmI8=
 github.com/whosonfirst/go-whosonfirst-spatial-rtree v0.0.5/go.mod h1:D9SK5XMjf9US+Tt9bfGJxiqq5NGUolJKDRGKHG5Be1Q=
 github.com/whosonfirst/go-whosonfirst-spatial-rtree v0.0.8/go.mod h1:LqwApGWDtXR30NgoD+3cJTfz8FeFbqSTmq0NDOxFWGg=
