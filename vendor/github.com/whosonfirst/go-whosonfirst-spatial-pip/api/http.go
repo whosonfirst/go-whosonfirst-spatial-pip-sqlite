@@ -62,9 +62,7 @@ func PointInPolygonHandler(app *spatial_app.SpatialApplication, opts *PointInPol
 			http.Error(rsp, err.Error(), http.StatusBadRequest)
 			return
 		}
-
-		props := strings.Split(",", str_props)
-
+				
 		pip_rsp, err := pip.QueryPointInPolygon(ctx, app, pip_req)
 
 		if err != nil {
@@ -87,10 +85,18 @@ func PointInPolygonHandler(app *spatial_app.SpatialApplication, opts *PointInPol
 			}
 		}
 
+		var props []string
+
+		str_props = strings.Trim(str_props, " ")
+		
+		if str_props != "" {
+			props = strings.Split(str_props, ",")
+		}
+		
 		if len(props) > 0 {
 
 			props_opts := &spatial.PropertiesResponseOptions{
-				Reader:       app.SpatialDatabase,
+				Reader:       app.PropertiesReader,
 				Keys:         props,
 				SourcePrefix: "properties",
 			}
